@@ -15,9 +15,10 @@ import com.spotify.protocol.types.Track;
 public class MainActivity extends AppCompatActivity {
 
     private static final String CLIENT_ID = "39c2a45ece414c3ba42e4d66916de39c";
-    private static final String REDIRECT_URI = "com.example.myspotify://callback";
+    private static final String REDIRECT_URI = "http://localhost:8888/callback";
     private SpotifyAppRemote mSpotifyAppRemote;
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -59,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void connected() {
+
+        System.out.println("Hello!");
         // Play a playlist
         mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:37i9dQZF1DX2sUQwD7tbmL");
 
