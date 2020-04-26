@@ -28,6 +28,35 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        /**
+        ConnectionParams connectionParams =
+                new ConnectionParams.Builder(CLIENT_ID)
+                        .setRedirectUri(REDIRECT_URI)
+                        .showAuthView(true)
+                        .build();
+
+        SpotifyAppRemote.connect(this, connectionParams,
+                new Connector.ConnectionListener() {
+
+                    public void onConnected(SpotifyAppRemote spotifyAppRemote) {
+                        mSpotifyAppRemote = spotifyAppRemote;
+                        Log.d("MainActivity", "Connected! Yay!");
+
+                        // Now you can start interacting with App Remote
+                        connected();
+
+                    }
+
+                    public void onFailure(Throwable throwable) {
+                        Log.e("MyActivity", throwable.getMessage(), throwable);
+
+                        // Something went wrong when attempting to connect! Handle errors here
+                    }
+                });
+        **/
+    }
+
+    public void buttonClick(android.view.View view) {
         ConnectionParams connectionParams =
                 new ConnectionParams.Builder(CLIENT_ID)
                         .setRedirectUri(REDIRECT_URI)
@@ -63,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
     private void connected() {
 
         // Play a playlist
+        mSpotifyAppRemote.getPlayerApi().setShuffle(true);
         mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:1XVU24KZyM8vU3FsAhp6vH");
 
         /** // Subscribe to PlayerState
