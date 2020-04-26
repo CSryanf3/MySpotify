@@ -3,6 +3,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
+import android.widget.TextView;
 
 import com.spotify.android.appremote.api.ConnectionParams;
 import com.spotify.android.appremote.api.Connector;
@@ -61,17 +62,30 @@ public class MainActivity extends AppCompatActivity {
 
     private void connected() {
 
-        System.out.println("Hello!");
         // Play a playlist
-        mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:37i9dQZF1DX2sUQwD7tbmL");
+        mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:1XVU24KZyM8vU3FsAhp6vH");
 
-        // Subscribe to PlayerState
+        /** // Subscribe to PlayerState
         mSpotifyAppRemote.getPlayerApi()
                 .subscribeToPlayerState()
                 .setEventCallback(playerState -> {
                     final Track track = playerState.track;
                     if (track != null) {
                         Log.d("MainActivity", track.name + " by " + track.artist.name);
+                    }
+                });
+        **/
+        mSpotifyAppRemote.getPlayerApi()
+                .subscribeToPlayerState()
+                .setEventCallback(playerState -> {
+                    final Track track = playerState.track;
+                    if (track != null) {
+                        final String currentTrack = track.name;
+                        final String currentArtist = track.artist.name;
+                        TextView textView = (TextView) findViewById(R.id.currentTrack);
+                        textView.setText("Track: " + currentTrack);
+                        textView = (TextView) findViewById(R.id.currentArtist);
+                        textView.setText("Artist: " + currentArtist);
                     }
                 });
     }
