@@ -77,7 +77,7 @@ public class SongService {
 //    }
 
     public ArrayList<Song> getTopPlayedTracks(final VolleyCallBack callBack) {
-        String endpoint = "https://api.spotify.com/v1/me/top/tracks";
+        String endpoint = "https://api.spotify.com/v1/me/top/tracks?time_range=long_term";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, endpoint, null, response -> {
                     Gson gson = new Gson();
@@ -123,7 +123,7 @@ public class SongService {
     }
 
     public ArrayList<Artist> getTopPlayedArtists(final VolleyCallBack callBack) {
-        String endpoint = "https://api.spotify.com/v1/me/top/artists";
+        String endpoint = "https://api.spotify.com/v1/me/top/artists?time_range=long_term";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, endpoint, null, response -> {
                     Gson gson = new Gson();
