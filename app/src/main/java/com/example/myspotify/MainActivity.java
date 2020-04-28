@@ -42,8 +42,10 @@ public class MainActivity extends AppCompatActivity {
     private static String authToken;
 
     private Song song;
+    private Artist artist;
     private SongService songService;
     private ArrayList<Song> topPlayedTracks;
+    private ArrayList<Artist> topPlayedArtists;
 
     private final String SCOPES = "user-top-read,user-read-recently-played,user-library-modify,user-read-email,user-read-private";
 
@@ -233,7 +235,27 @@ public class MainActivity extends AppCompatActivity {
             System.out.println(topPlayedTracks.get(i).getName());
         }
     }
+
+    private void getArtists() {
+        songService.getTopPlayedArtists(() -> {
+            topPlayedArtists = songService.getArtists();
+            updateArtist();
+        });
+    }
+
+    private void updateArtist() {
+        if (topPlayedArtists.size() > 0) {
+            //songView.setText(topPlayedTracks.get(0).getName());
+            artist = topPlayedArtists.get(0);
+//            System.out.println(song.getName());
+        }
+        for (int i = 0; i < topPlayedArtists.size(); i++) {
+            System.out.println(topPlayedArtists.get(i).getName());
+        }
+    }
+
     public void topArtists(android.view.View view) {
+        getArtists();
         setContentView(R.layout.activity_artists);
     }
 
