@@ -39,45 +39,8 @@ public class SongService {
         return artists;
     }
 
-//    public ArrayList<Song> getRecentlyPlayedTracks(final VolleyCallBack callBack) {
-//        String endpoint = "https://api.spotify.com/v1/me/player/recently-played";
-//        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-//                (Request.Method.GET, endpoint, null, response -> {
-//                    Gson gson = new Gson();
-//                    JSONArray jsonArray = response.optJSONArray("items");
-//                    for (int n = 0; n < jsonArray.length(); n++) {
-//                        try {
-//                            JSONObject object = jsonArray.getJSONObject(n);
-//                            object = object.optJSONObject("track");
-//                            Song song = gson.fromJson(object.toString(), Song.class);
-//                            songs.add(song);
-//                        } catch (JSONException e) {
-//                            e.printStackTrace();
-//                        }
-//                    }
-//                    callBack.onSuccess();
-//                }, error -> {
-//                    // TODO: Handle error
-//
-//                }) {
-//            @Override
-//            public Map<String, String> getHeaders() throws AuthFailureError {
-//                Map<String, String> headers = new HashMap<>();
-////                String token = sharedPreferences.getString("token", "");
-//
-//                String token = MainActivity.getAuthToken();
-//                System.out.println("Token from MainActivity: " + token);
-//                String auth = "Bearer " + token;
-//                headers.put("Authorization", auth);
-//                return headers;
-//            }
-//        };
-//        queue.add(jsonObjectRequest);
-//        return songs;
-//    }
-
     public ArrayList<Song> getTopPlayedTracks(final VolleyCallBack callBack) {
-        String endpoint = "https://api.spotify.com/v1/me/top/tracks";
+        String endpoint = "https://api.spotify.com/v1/me/top/tracks?time_range=long_term";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, endpoint, null, response -> {
                     Gson gson = new Gson();
@@ -89,13 +52,12 @@ public class SongService {
                     for (int n = 0; n < jsonArray.length(); n++) {
                         try {
                             JSONObject object = jsonArray.getJSONObject(n);
-                            //object = object.optJSONObject("name");
-
                             if (object == null) {
                                 System.out.println("JSONObject is null! :(");
                                 continue;
                             }
                             Song song = gson.fromJson(object.toString(), Song.class);
+                            song.removeFeat();
                             songs.add(song);
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -109,8 +71,6 @@ public class SongService {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> headers = new HashMap<>();
-//                String token = sharedPreferences.getString("token", "");
-
                 String token = MainActivity.getAuthToken();
                 System.out.println("Token from MainActivity: " + token);
                 String auth = "Bearer " + token;
@@ -123,7 +83,7 @@ public class SongService {
     }
 
     public ArrayList<Artist> getTopPlayedArtists(final VolleyCallBack callBack) {
-        String endpoint = "https://api.spotify.com/v1/me/top/artists";
+        String endpoint = "https://api.spotify.com/v1/me/top/artists?time_range=long_term";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, endpoint, null, response -> {
                     Gson gson = new Gson();
@@ -155,8 +115,6 @@ public class SongService {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> headers = new HashMap<>();
-//                String token = sharedPreferences.getString("token", "");
-
                 String token = MainActivity.getAuthToken();
                 System.out.println("Token from MainActivity: " + token);
                 String auth = "Bearer " + token;

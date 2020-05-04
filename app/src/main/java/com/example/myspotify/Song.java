@@ -10,6 +10,13 @@ public class Song {
         this.id = id;
     }
 
+    public void removeFeat() {
+        if (name.contains("(feat.")) {
+            int index = name.indexOf("(feat.");
+            name = name.substring(0, index);
+        }
+    }
+
     public String getId() {
         return id;
     }
