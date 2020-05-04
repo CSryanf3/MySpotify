@@ -65,7 +65,7 @@ public class SongService {
                     callBack.onSuccess();
                 }, error -> {
                     // TODO: Handle error
-
+                    System.out.println("There was an error here...");
                 }) {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {

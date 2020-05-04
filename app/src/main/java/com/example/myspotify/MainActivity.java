@@ -1,5 +1,4 @@
 package com.example.myspotify;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -19,7 +18,6 @@ import com.spotify.sdk.android.auth.AuthorizationClient;
 
 import com.spotify.protocol.types.Track;
 
-
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -29,7 +27,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_CODE = 1337;
-    private static final String CLIENT_ID = "beede1e63d374dc28e256448cb4f886e";
+    private static final String CLIENT_ID = "39c2a45ece414c3ba42e4d66916de39c";
     private static final String REDIRECT_URI = "http://localhost:8888/callback";
     private SpotifyAppRemote mSpotifyAppRemote;
     private static String authToken;
@@ -47,6 +45,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        //begin login flow
+
+        // Request code will be used to verify if result comes from the login activity. Can be set to any integer.
+        //private static final int REQUEST_CODE = 1337;
+        //private static final String REDIRECT_URI = "yourcustomprotocol://callback";
 
         AuthorizationRequest.Builder builder =
                 new AuthorizationRequest.Builder(CLIENT_ID, AuthorizationResponse.Type.TOKEN, REDIRECT_URI);
@@ -143,8 +148,65 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void topTracks(android.view.View view) {
+//        try {
+//            URL url = new URL("https://api.spotify.com/v1/me/top/tracks");
+//            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+//            con.setRequestMethod("GET");
+//            Map<String, String> parameters = new HashMap<>();
+//            parameters.put("type","tracks");
+//            parameters.put("time_range", "long_term");
+//            parameters.put("limit", "10");
+//            parameters.put("offset", "0");
+//            parameters.put("OAuth Token", "BQDpG7vsK_Mv6TpeHYMm-QFlExpo2SdjBxo6xqA-9lGLnIKd5BI8OdSj2BdZx5uFNUWt95XsvSbHz_oNeIJbbuxFR9ucSoyCwUwADWRgOcuu5g5Vb4u2ae3ENYZEGy47ZXZMduItRDEqyb4IUmB3lUSPQQ");
+//
+////            con.setDoOutput(true);
+////            DataOutputStream out = new DataOutputStream(con.getOutputStream());
+////            out.writeBytes(getParamsString(parameters));
+////            out.flush();
+////            out.close();
+////
+//            con.setRequestProperty("Authorization", "Bearer " + authToken);
+////
+////            con.setConnectTimeout(5000);
+////            con.setReadTimeout(5000);
+////
+////
+////
+////            //read the response
+////            int status = con.getResponseCode();
+////            BufferedReader in = new BufferedReader(
+////                    new InputStreamReader(con.getInputStream()));
+////            String inputLine;
+////            StringBuffer content = new StringBuffer();
+////            while ((inputLine = in.readLine()) != null) {
+////                content.append(inputLine);
+////            }
+////            System.out.println(content);
+////            in.close();
+////
+////
+//
+////            BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
+////            StringBuilder sb = new StringBuilder();
+////            String line;
+////            while ((line = br.readLine()) != null) {
+////                sb.append(line + "\n");
+////            }
+////            br.close();
+////
+////            String jsonString = sb.toString();
+////            System.out.println("JSON: " + jsonString);
+////            con.disconnect();
+//
+//
+//        } catch (Exception e) {
+//            System.out.println("Error attempting to get user's top tracks");
+//            return;
+//        }
+
         getTracks();
-        setContentView(R.layout.activity_tracks);
+        // setContentView(R.layout.activity_tracks);
+
     }
 
     private void getTracks() {
@@ -156,11 +218,35 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateSong() {
         if (topPlayedTracks.size() > 0) {
+            //songView.setText(topPlayedTracks.get(0).getName());
             song = topPlayedTracks.get(0);
+//            System.out.println(song.getName());
         }
-        for (int i = 0; i < topPlayedTracks.size(); i++) {
-            System.out.println(topPlayedTracks.get(i).getName());
-        }
+        //for (int i = 0; i < topPlayedTracks.size(); i++) {
+        //    System.out.println(topPlayedTracks.get(i).getName());
+        //}
+
+        setContentView(R.layout.activity_tracks);
+        TextView textView = (TextView) findViewById(R.id.Track1);
+        textView.setText(topPlayedTracks.get(0).getName());
+        textView = (TextView) findViewById(R.id.Track2);
+        textView.setText(topPlayedTracks.get(1).getName());
+        textView = (TextView) findViewById(R.id.Track3);
+        textView.setText(topPlayedTracks.get(2).getName());
+        textView = (TextView) findViewById(R.id.Track4);
+        textView.setText(topPlayedTracks.get(3).getName());
+        textView = (TextView) findViewById(R.id.Track5);
+        textView.setText(topPlayedTracks.get(4).getName());
+        textView = (TextView) findViewById(R.id.Track6);
+        textView.setText(topPlayedTracks.get(5).getName());
+        textView = (TextView) findViewById(R.id.Track7);
+        textView.setText(topPlayedTracks.get(6).getName());
+        textView = (TextView) findViewById(R.id.Track8);
+        textView.setText(topPlayedTracks.get(7).getName());
+        textView = (TextView) findViewById(R.id.Track9);
+        textView.setText(topPlayedTracks.get(8).getName());
+        textView = (TextView) findViewById(R.id.Track10);
+        textView.setText(topPlayedTracks.get(9).getName());
     }
 
     private void getArtists() {
@@ -172,16 +258,38 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateArtist() {
         if (topPlayedArtists.size() > 0) {
+            //songView.setText(topPlayedTracks.get(0).getName());
             artist = topPlayedArtists.get(0);
+//            System.out.println(song.getName());
         }
         for (int i = 0; i < topPlayedArtists.size(); i++) {
             System.out.println(topPlayedArtists.get(i).getName());
         }
+        setContentView(R.layout.activity_artists);
+        TextView textView = (TextView) findViewById(R.id.Artist1);
+        textView.setText(topPlayedArtists.get(0).getName());
+        textView = (TextView) findViewById(R.id.Artist2);
+        textView.setText(topPlayedArtists.get(1).getName());
+        textView = (TextView) findViewById(R.id.Artist3);
+        textView.setText(topPlayedArtists.get(2).getName());
+        textView = (TextView) findViewById(R.id.Artist4);
+        textView.setText(topPlayedArtists.get(3).getName());
+        textView = (TextView) findViewById(R.id.Artist5);
+        textView.setText(topPlayedArtists.get(4).getName());
+        textView = (TextView) findViewById(R.id.Artist6);
+        textView.setText(topPlayedArtists.get(5).getName());
+        textView = (TextView) findViewById(R.id.Artist7);
+        textView.setText(topPlayedArtists.get(6).getName());
+        textView = (TextView) findViewById(R.id.Artist8);
+        textView.setText(topPlayedArtists.get(7).getName());
+        textView = (TextView) findViewById(R.id.Artist9);
+        textView.setText(topPlayedArtists.get(8).getName());
+        textView = (TextView) findViewById(R.id.Artist10);
+        textView.setText(topPlayedArtists.get(9).getName());
     }
 
     public void topArtists(android.view.View view) {
         getArtists();
-        setContentView(R.layout.activity_artists);
     }
 
     public void backToMain(android.view.View view) {
