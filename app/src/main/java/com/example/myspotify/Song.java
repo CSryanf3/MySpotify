@@ -6,6 +6,12 @@ public class Song {
     private String name;
 
     public Song(String id, String name) {
+        System.out.println(name);
+        if (name.contains("(feat.")) {
+            int index = name.indexOf("(feat.");
+            name = name.substring(0, index);
+        }
+        System.out.println(name);
         this.name = name;
         this.id = id;
     }

@@ -16,27 +16,18 @@ import com.spotify.sdk.android.auth.AuthorizationRequest;
 import com.spotify.sdk.android.auth.AuthorizationResponse;
 import com.spotify.sdk.android.auth.AuthorizationClient;
 
-import com.spotify.protocol.client.Subscription;
-import com.spotify.protocol.types.PlayerState;
 import com.spotify.protocol.types.Track;
-import com.spotify.sdk.android.auth.app.SpotifyAuthHandler;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_CODE = 1337;
-    private static final String CLIENT_ID = "beede1e63d374dc28e256448cb4f886e";
+    private static final String CLIENT_ID = "39c2a45ece414c3ba42e4d66916de39c";
     private static final String REDIRECT_URI = "http://localhost:8888/callback";
     private SpotifyAppRemote mSpotifyAppRemote;
     private static String authToken;
@@ -214,7 +205,7 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         getTracks();
-        setContentView(R.layout.activity_tracks);
+        // setContentView(R.layout.activity_tracks);
 
     }
 
@@ -231,9 +222,31 @@ public class MainActivity extends AppCompatActivity {
             song = topPlayedTracks.get(0);
 //            System.out.println(song.getName());
         }
-        for (int i = 0; i < topPlayedTracks.size(); i++) {
-            System.out.println(topPlayedTracks.get(i).getName());
-        }
+        //for (int i = 0; i < topPlayedTracks.size(); i++) {
+        //    System.out.println(topPlayedTracks.get(i).getName());
+        //}
+
+        setContentView(R.layout.activity_tracks);
+        TextView textView = (TextView) findViewById(R.id.Track1);
+        textView.setText(topPlayedTracks.get(0).getName());
+        textView = (TextView) findViewById(R.id.Track2);
+        textView.setText(topPlayedTracks.get(1).getName());
+        textView = (TextView) findViewById(R.id.Track3);
+        textView.setText(topPlayedTracks.get(2).getName());
+        textView = (TextView) findViewById(R.id.Track4);
+        textView.setText(topPlayedTracks.get(3).getName());
+        textView = (TextView) findViewById(R.id.Track5);
+        textView.setText(topPlayedTracks.get(4).getName());
+        textView = (TextView) findViewById(R.id.Track6);
+        textView.setText(topPlayedTracks.get(5).getName());
+        textView = (TextView) findViewById(R.id.Track7);
+        textView.setText(topPlayedTracks.get(6).getName());
+        textView = (TextView) findViewById(R.id.Track8);
+        textView.setText(topPlayedTracks.get(7).getName());
+        textView = (TextView) findViewById(R.id.Track9);
+        textView.setText(topPlayedTracks.get(8).getName());
+        textView = (TextView) findViewById(R.id.Track10);
+        textView.setText(topPlayedTracks.get(9).getName());
     }
 
     private void getArtists() {
@@ -252,11 +265,31 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < topPlayedArtists.size(); i++) {
             System.out.println(topPlayedArtists.get(i).getName());
         }
+        setContentView(R.layout.activity_artists);
+        TextView textView = (TextView) findViewById(R.id.Artist1);
+        textView.setText(topPlayedArtists.get(0).getName());
+        textView = (TextView) findViewById(R.id.Artist2);
+        textView.setText(topPlayedArtists.get(1).getName());
+        textView = (TextView) findViewById(R.id.Artist3);
+        textView.setText(topPlayedArtists.get(2).getName());
+        textView = (TextView) findViewById(R.id.Artist4);
+        textView.setText(topPlayedArtists.get(3).getName());
+        textView = (TextView) findViewById(R.id.Artist5);
+        textView.setText(topPlayedArtists.get(4).getName());
+        textView = (TextView) findViewById(R.id.Artist6);
+        textView.setText(topPlayedArtists.get(5).getName());
+        textView = (TextView) findViewById(R.id.Artist7);
+        textView.setText(topPlayedArtists.get(6).getName());
+        textView = (TextView) findViewById(R.id.Artist8);
+        textView.setText(topPlayedArtists.get(7).getName());
+        textView = (TextView) findViewById(R.id.Artist9);
+        textView.setText(topPlayedArtists.get(8).getName());
+        textView = (TextView) findViewById(R.id.Artist10);
+        textView.setText(topPlayedArtists.get(9).getName());
     }
 
     public void topArtists(android.view.View view) {
         getArtists();
-        setContentView(R.layout.activity_artists);
     }
 
     public void backToMain(android.view.View view) {

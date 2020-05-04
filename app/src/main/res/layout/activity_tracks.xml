@@ -6,6 +6,143 @@
     android:layout_height="match_parent"
     android:background="#222121">
 
+    <TextView
+        android:id="@+id/Track9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="420dp"
+        android:fontFamily="casual"
+        android:text="Track 9"
+        android:textColor="#4CAF50"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Header" />
+
+    <TextView
+        android:id="@+id/Track10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="470dp"
+        android:fontFamily="casual"
+        android:text="Track 10"
+        android:textColor="#4CAF50"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Header" />
+
+    <TextView
+        android:id="@+id/Track8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="370dp"
+        android:fontFamily="casual"
+        android:text="Track 8"
+        android:textColor="#4CAF50"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Header" />
+
+    <TextView
+        android:id="@+id/Track7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="320dp"
+        android:fontFamily="casual"
+        android:text="Track 7"
+        android:textColor="#4CAF50"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Header" />
+
+    <TextView
+        android:id="@+id/Track6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="270dp"
+        android:fontFamily="casual"
+        android:text="Track 6"
+        android:textColor="#4CAF50"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Header" />
+
+    <TextView
+        android:id="@+id/Track5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
+        android:fontFamily="casual"
+        android:text="Track 5"
+        android:textColor="#4CAF50"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Header" />
+
+    <TextView
+        android:id="@+id/Track4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="170dp"
+        android:fontFamily="casual"
+        android:text="Track 4"
+        android:textColor="#4CAF50"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Header" />
+
+    <TextView
+        android:id="@+id/Track3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:fontFamily="casual"
+        android:text="Track 3"
+        android:textColor="#4CAF50"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Header" />
+
+    <TextView
+        android:id="@+id/Track2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:fontFamily="casual"
+        android:text="Track 2"
+        android:textColor="#4CAF50"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Header" />
+
+    <TextView
+        android:id="@+id/Track1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="casual"
+        android:text="Track 1"
+        android:textColor="#4CAF50"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Header" />
+
     <Button
         android:id="@+id/mainMenu"
         android:layout_width="wrap_content"
@@ -16,110 +153,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/Artist10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="470dp"
-        android:fontFamily="casual"
-        android:text="Track10"
-        android:textColor="#4CAF50"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Header" />
-
-    <TextView
-        android:id="@+id/Artist9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="420dp"
-        android:fontFamily="casual"
-        android:text="Track9"
-        android:textColor="#4CAF50"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Header" />
-
-    <TextView
-        android:id="@+id/Artist8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="370dp"
-        android:fontFamily="casual"
-        android:text="Track8"
-        android:textColor="#4CAF50"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Header" />
-
-    <TextView
-        android:id="@+id/Artist7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="320dp"
-        android:fontFamily="casual"
-        android:text="Track7"
-        android:textColor="#4CAF50"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Header" />
-
-    <TextView
-        android:id="@+id/Artist6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="270dp"
-        android:fontFamily="casual"
-        android:text="Track6"
-        android:textColor="#4CAF50"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Header" />
-
-    <TextView
-        android:id="@+id/Artist5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
-        android:fontFamily="casual"
-        android:text="Track5"
-        android:textColor="#4CAF50"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Header" />
-
-    <TextView
-        android:id="@+id/Artist4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="170dp"
-        android:fontFamily="casual"
-        android:text="Track4"
-        android:textColor="#4CAF50"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Header" />
-
-    <TextView
-        android:id="@+id/Artist3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:fontFamily="casual"
-        android:text="Track3"
-        android:textColor="#4CAF50"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Header" />
 
     <TextView
         android:id="@+id/Header"
@@ -136,29 +169,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/Artist1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="casual"
-        android:text="Track1"
-        android:textColor="#4CAF50"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Header" />
-
-    <TextView
-        android:id="@+id/Artist2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:fontFamily="casual"
-        android:text="Track2"
-        android:textColor="#4CAF50"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Header" />
 </androidx.constraintlayout.widget.ConstraintLayout>
