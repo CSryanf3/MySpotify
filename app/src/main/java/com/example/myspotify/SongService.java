@@ -57,6 +57,7 @@ public class SongService {
                                 continue;
                             }
                             Song song = gson.fromJson(object.toString(), Song.class);
+                            song.removeFeat();
                             songs.add(song);
                         } catch (JSONException e) {
                             e.printStackTrace();
