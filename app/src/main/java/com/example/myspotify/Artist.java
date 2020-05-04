@@ -9,6 +9,13 @@ public class Artist {
         this.id = id;
     }
 
+    public void shortenName() {
+        int MAX_LENGTH = 30;
+        if (name.length() > MAX_LENGTH) {
+            name = name.substring(0, MAX_LENGTH);
+        }
+    }
+
     public String getId() {
         return id;
     }

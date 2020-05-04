@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#222121">
+    android:background="#222121"
+    android:onClick="playTopArtist">
 
     <Button
         android:id="@+id/mainMenu"
@@ -127,6 +128,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:fontFamily="casual"
+        android:onClick="playTopArtist"
         android:text="Top Artists"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#4CAF50"

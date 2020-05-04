@@ -7,6 +7,64 @@
     android:background="#222121"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/spotifyLogo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="14dp"
+        app:layout_constraintBottom_toTopOf="@id/PauseButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CS125Playlist"
+        app:srcCompat="@drawable/spotifylogo" />
+
+    <Button
+        android:id="@+id/SkipButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="30dp"
+        android:onClick="skipSong"
+        android:text="Skip"
+        app:layout_constraintBottom_toTopOf="@+id/Footer"
+        app:layout_constraintStart_toEndOf="@+id/PauseButton" />
+
+    <Button
+        android:id="@+id/ResumeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="30dp"
+        android:onClick="resumeSong"
+        android:text="Resume"
+        app:layout_constraintBottom_toTopOf="@+id/Footer"
+        app:layout_constraintEnd_toStartOf="@+id/PauseButton" />
+
+    <Button
+        android:id="@+id/PauseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:onClick="pauseSong"
+        android:text="Pause"
+        app:layout_constraintBottom_toTopOf="@+id/Footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/CS125Playlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:onClick="toPlayScreen"
+        android:text="Play CS 125 Playlist"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TopArtists" />
+
     <TextView
         android:id="@+id/Footer"
         android:layout_width="wrap_content"
@@ -18,17 +76,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/PlayCS125"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
-        android:onClick="CS125PlaylistClick"
-        android:text="Play CS 125 Playlist"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TopArtists" />
 
     <Button
         android:id="@+id/TopArtists"
@@ -46,7 +93,7 @@
         style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="20dp"
         android:onClick="topTracks"
         android:text="Top Tracks"
         app:layout_constraintEnd_toEndOf="parent"

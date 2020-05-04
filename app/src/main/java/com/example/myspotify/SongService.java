@@ -58,6 +58,7 @@ public class SongService {
                             }
                             Song song = gson.fromJson(object.toString(), Song.class);
                             song.removeFeat();
+                            song.shortenName();
                             songs.add(song);
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -102,6 +103,7 @@ public class SongService {
                                 continue;
                             }
                             Artist artist = gson.fromJson(object.toString(), Artist.class);
+                            artist.shortenName();
                             artists.add(artist);
                         } catch (JSONException e) {
                             e.printStackTrace();
