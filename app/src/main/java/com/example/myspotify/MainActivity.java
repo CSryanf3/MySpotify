@@ -1,4 +1,5 @@
 package com.example.myspotify;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,20 +17,12 @@ import com.spotify.sdk.android.auth.AuthorizationRequest;
 import com.spotify.sdk.android.auth.AuthorizationResponse;
 import com.spotify.sdk.android.auth.AuthorizationClient;
 
-import com.spotify.protocol.client.Subscription;
-import com.spotify.protocol.types.PlayerState;
 import com.spotify.protocol.types.Track;
-import com.spotify.sdk.android.auth.app.SpotifyAuthHandler;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.InputStreamReader;
+
 import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 
 
@@ -54,13 +47,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-        //begin login flow
-
-        // Request code will be used to verify if result comes from the login activity. Can be set to any integer.
-        //private static final int REQUEST_CODE = 1337;
-        //private static final String REDIRECT_URI = "yourcustomprotocol://callback";
 
         AuthorizationRequest.Builder builder =
                 new AuthorizationRequest.Builder(CLIENT_ID, AuthorizationResponse.Type.TOKEN, REDIRECT_URI);
@@ -157,65 +143,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void topTracks(android.view.View view) {
-//        try {
-//            URL url = new URL("https://api.spotify.com/v1/me/top/tracks");
-//            HttpURLConnection con = (HttpURLConnection) url.openConnection();
-//            con.setRequestMethod("GET");
-//            Map<String, String> parameters = new HashMap<>();
-//            parameters.put("type","tracks");
-//            parameters.put("time_range", "long_term");
-//            parameters.put("limit", "10");
-//            parameters.put("offset", "0");
-//            parameters.put("OAuth Token", "BQDpG7vsK_Mv6TpeHYMm-QFlExpo2SdjBxo6xqA-9lGLnIKd5BI8OdSj2BdZx5uFNUWt95XsvSbHz_oNeIJbbuxFR9ucSoyCwUwADWRgOcuu5g5Vb4u2ae3ENYZEGy47ZXZMduItRDEqyb4IUmB3lUSPQQ");
-//
-////            con.setDoOutput(true);
-////            DataOutputStream out = new DataOutputStream(con.getOutputStream());
-////            out.writeBytes(getParamsString(parameters));
-////            out.flush();
-////            out.close();
-////
-//            con.setRequestProperty("Authorization", "Bearer " + authToken);
-////
-////            con.setConnectTimeout(5000);
-////            con.setReadTimeout(5000);
-////
-////
-////
-////            //read the response
-////            int status = con.getResponseCode();
-////            BufferedReader in = new BufferedReader(
-////                    new InputStreamReader(con.getInputStream()));
-////            String inputLine;
-////            StringBuffer content = new StringBuffer();
-////            while ((inputLine = in.readLine()) != null) {
-////                content.append(inputLine);
-////            }
-////            System.out.println(content);
-////            in.close();
-////
-////
-//
-////            BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
-////            StringBuilder sb = new StringBuilder();
-////            String line;
-////            while ((line = br.readLine()) != null) {
-////                sb.append(line + "\n");
-////            }
-////            br.close();
-////
-////            String jsonString = sb.toString();
-////            System.out.println("JSON: " + jsonString);
-////            con.disconnect();
-//
-//
-//        } catch (Exception e) {
-//            System.out.println("Error attempting to get user's top tracks");
-//            return;
-//        }
-
         getTracks();
         setContentView(R.layout.activity_tracks);
-
     }
 
     private void getTracks() {
@@ -227,9 +156,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateSong() {
         if (topPlayedTracks.size() > 0) {
-            //songView.setText(topPlayedTracks.get(0).getName());
             song = topPlayedTracks.get(0);
-//            System.out.println(song.getName());
         }
         for (int i = 0; i < topPlayedTracks.size(); i++) {
             System.out.println(topPlayedTracks.get(i).getName());
@@ -245,9 +172,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateArtist() {
         if (topPlayedArtists.size() > 0) {
-            //songView.setText(topPlayedTracks.get(0).getName());
             artist = topPlayedArtists.get(0);
-//            System.out.println(song.getName());
         }
         for (int i = 0; i < topPlayedArtists.size(); i++) {
             System.out.println(topPlayedArtists.get(i).getName());
