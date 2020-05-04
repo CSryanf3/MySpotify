@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-    public void playSong(android.view.View view) {
+    public void playPlaylist(android.view.View view) {
         // Play a playlist
         mSpotifyAppRemote.getPlayerApi().setShuffle(true);
         mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:4QEC6bqhulA5VSLI9J8B5V");
@@ -225,7 +225,6 @@ public class MainActivity extends AppCompatActivity {
         //for (int i = 0; i < topPlayedTracks.size(); i++) {
         //    System.out.println(topPlayedTracks.get(i).getName());
         //}
-
         setContentView(R.layout.activity_tracks);
         TextView textView = (TextView) findViewById(R.id.Track1);
         textView.setText(topPlayedTracks.get(0).getName());
